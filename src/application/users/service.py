@@ -17,7 +17,7 @@ class UserService(UserServiceInterface):
         user_entity = user_dto.to_domain()
         try:
             dto = user_dto.to_dto(user_entity)
-            self.storage.save(dto)
+            self.storage.create(dto)
             return {"message": self.success_message.CREATED_SUCCESSFULLY.value, "code": 201}
 
         except Exception:
