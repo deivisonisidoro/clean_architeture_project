@@ -1,6 +1,6 @@
 from django.db import transaction
 from pydantic.dataclasses import dataclass
-from users.models import User
+from users.models.user import User
 
 from src.application.users.dto import UserDTO
 from src.application.users.interfaces.repository_interface import UserRepositoryInterface

@@ -19,7 +19,9 @@ class UserEntity:
     email: EmailStr
     password: str
 
-    def __init__(self, username: str, email: EmailStr, password: str, id: Any = None):
+    def __init__(
+        self, username: str, email: EmailStr, password: str, id: Any = None
+    ):
         self.id = id
         self.username = username
         self.email = email

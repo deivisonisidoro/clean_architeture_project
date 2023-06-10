@@ -1,8 +1,12 @@
 from pydantic.dataclasses import dataclass
 
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
-from src.application.users.interfaces.service_interface import UserServiceInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
+from src.application.users.interfaces.service_interface import (
+    UserServiceInterface,
+)
 from src.domain.users.entities.user_entity import UserEntity
 from src.domain.users.enums import ErrorMessage, SuccessMessage
 
@@ -18,7 +22,13 @@ class UserService(UserServiceInterface):
         try:
             dto = user_dto.to_dto(user_entity)
             self.storage.create(dto)
-            return {"message": self.success_message.CREATED_SUCCESSFULLY.value, "code": 201}
+            return {
+                "message": self.success_message.CREATED_SUCCESSFULLY.value,
+                "code": 201,
+            }
 
         except Exception:
-            return {"message": self.error_message.INVALID_REQUEST.value, "code": 400}
+            return {
+                "message": self.error_message.INVALID_REQUEST.value,
+                "code": 400,
+            }

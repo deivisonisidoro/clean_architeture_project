@@ -32,15 +32,15 @@ Todas as dependências, incluindo o Flake8 e o Black, serão instaladas automati
 
 ### Verificação de Estilo e Qualidade
 
-O projeto já está configurado para utilizar o Flake8 e o Black para verificação de estilo e qualidade de código. As configurações estão definidas no arquivo `pyproject.toml`.
+O projeto já está configurado para utilizar o Flake8 e o Black para verificação de estilo e qualidade de código.
 
 - Para verificar o código Python com o Flake8, execute o seguinte comando:
-  `poetry run lint`
+  `poetry run flake8`
 
 O Flake8 irá verificar o código em busca de problemas de estilo e conformidade com as diretrizes do PEP 8.
 
 - Para formatar automaticamente o código Python com o Black, execute o seguinte comando:
-  `poetry run format`
+  `poetry run black .`
 
 O Black irá formatar o código, garantindo um estilo consistente.
 

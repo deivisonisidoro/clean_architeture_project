@@ -16,4 +16,8 @@ class UserDTO:
         return user_entity
 
     def to_dto(self, user_entity: UserEntity):
-        return UserDTO(username=user_entity.username, email=user_entity.email, password=user_entity.password)
+        return UserDTO(
+            username=user_entity.username,
+            email=user_entity.email,
+            password=user_entity.password,
+        )

@@ -20,10 +20,27 @@ flake8 = "^6.0.0"
 black = "^23.3.0"
 pylint = "^2.17.4"
 
-[tool.poetry.scripts]
-lint = "python ./school/infrastructure/school_django/manage.py"
+[tool.flake8]
+ignore = "E501"
 
-
+[tool.black]
+line-length = 79
+target-version = ['py38', 'py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs         # exclude a directory named ".eggs"
+  | \.git          # exclude the ".git" directory
+  | \.hg           # exclude the ".hg" directory
+  | \.mypy_cache   # exclude the ".mypy_cache" directory
+  | \.tox          # exclude the ".tox" directory
+  | \.venv         # exclude the ".venv" directory
+  | _build         # exclude the "_build" directory
+  | buck-out       # exclude the "buck-out" directory
+  | build          # exclude the "build" directory
+  | dist           # exclude the "dist" directory
+)/
+'''
 
 
 [build-system]
