@@ -16,8 +16,10 @@ COPY . /app/
 # Expõe a porta do servidor web do Django
 EXPOSE 8000
 
-CMD ['cd', '']
-CMD ["python", "manage.py", "makemigrations"]
-CMD ["python", "manage.py", "migrate"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Define o script como executável
+RUN chmod +x run_manage.sh
 
+# Executa os comandos desejados
+CMD ["./run_manage.sh", "makemigrations"]
+CMD ["./run_manage.sh", "migrate"]
+CMD ["./run_manage.sh", "runserver", "0.0.0.0:8000"]
