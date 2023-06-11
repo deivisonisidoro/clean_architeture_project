@@ -54,38 +54,36 @@ To start Django, the project follows the clean architecture approach by placing 
 
 By placing Django in the "infrastructure" folder, it separates the technical aspects of the application from the core business logic. This separation allows for easier replacement of the framework if needed and ensures that changes in the underlying technology do not affect the core business logic.
 
-To start Django, use the following commands:
+To start Django, follow the steps below based on your operating system:
 
-- On Windows: Execute the `run_manage.bat` file.
-  Create database migrations:
-  `poetry run run_manage.bat makemigrations`
+- **Windows**:
 
-  Apply migrations to the database:
-  `poetry run run_manage.bat migrate`
+  - Execute the `run_manage.bat` file.
+  - Use the following commands to perform database migrations, create a superuser, and start the Django development server:
 
-  Create a superuser to access the admin area:
-  `poetry run run_manage.bat createsuperuser`
+    ```bash
+    poetry run run_manage.bat makemigrations
+    poetry run run_manage.bat migrate
+    poetry run run_manage.bat createsuperuser
+    poetry run run_manage.bat runserver
+    ```
 
-  Start the Django development server:
-  `poetry run run_manage.bat runserver`
+  - Ensure that the `run_manage.bat` file has execution permissions.
 
-  Make sure the `run_manage.bat` file has execution permissions.
+- **Linux**:
 
-- On Linux: Execute the `run_manage.sh` file.
-  Create database migrations:
-  `poetry run run_manage.sh makemigrations`
+  - Execute the `run_manage.sh` file.
+  - Use the following commands to perform database migrations, create a superuser, and start the Django development server:
 
-  Apply migrations to the database:
-  `poetry run run_manage.sh migrate`
+    ```bash
+    poetry run run_manage.sh makemigrations
+    poetry run run_manage.sh migrate
+    poetry run run_manage.sh createsuperuser
+    poetry run run_manage.sh runserver
+    ```
 
-  Create a superuser to access the admin area:
-  `poetry run run_manage.sh createsuperuser`
+  - Remember to give execution permissions to the `run_manage.sh` file using the command `chmod +x run_manage.sh`.
 
-  Start the Django development server:
-  `poetry run run_manage.sh runserver`
-
-  Remember to give execution permissions to the `run_manage.sh` file using the command `chmod +x run_manage.sh`.
-
-Remember to adapt the above commands according to your project's structure.
+Please note that these commands assume that you are in the project's root directory when executing them. Make sure to adjust the commands according to your project's structure if needed.
 
 Take advantage of Poetry, Flake8, and Black to ensure better organization, style, and code quality in this project.
