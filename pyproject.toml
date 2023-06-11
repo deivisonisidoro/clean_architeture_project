@@ -13,6 +13,10 @@ django = "^4.2.2"
 djangorestframework = "^3.14.0"
 python-dotenv = "^1.0.0"
 email-validator = "^2.0.0.post2"
+mkdocs = "^1.4.3"
+mkdocs-material = "^9.1.15"
+mkdocs-material-extensions = "^1.1.1"
+mkdocstrings-python = "^1.1.2"
 
 
 [tool.poetry.group.dev.dependencies]

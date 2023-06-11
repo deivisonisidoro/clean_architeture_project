@@ -1,0 +1,43 @@
+site_name: Clean Architecture Project
+repo_url: https://github.com/deivisonisidoro/clean_architeture_project
+repo_name: deivisonisidoro/clean_architeture_project
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Modo Escuro
+    - scheme: slate
+      primary: deep blue
+      toggle:
+        icon: material/toggle-switch
+        name: Modo Claro
+
+markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.css
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js
+watch:
+  - src
+  - infrastructure
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src, infrastructure]
