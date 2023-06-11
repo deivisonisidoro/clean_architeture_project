@@ -1,49 +1,91 @@
-# Meu Projeto Python
+# Clean Architecture Project
 
-Este é um projeto Python que segue a arquitetura limpa, uma abordagem de organização do código que visa separar as responsabilidades em diferentes camadas para obter um código mais modular, testável e escalável.
+This is a Python project that follows the clean architecture, an approach to code organization that aims to separate responsibilities into different layers to achieve a more modular, testable, and scalable code.
 
-## Ferramentas Utilizadas
+## Tools Used
 
-O projeto utiliza as seguintes ferramentas:
+The project utilizes the following tools:
 
-- [Poetry](https://python-poetry.org/): Um gerenciador de dependências e ambientes virtuais para Python que simplifica o gerenciamento de pacotes e as configurações do projeto.
+- [Poetry](https://python-poetry.org/): A dependency and virtual environment manager for Python that simplifies package management and project configurations.
 
-- [Flake8](https://flake8.pycqa.org/): Uma ferramenta de análise estática de código Python que verifica o estilo e a conformidade com as diretrizes definidas pelo guia de estilo PEP 8. Ele ajuda a manter um código Python limpo e legível.
+- [Flake8](https://flake8.pycqa.org/): A Python static code analysis tool that checks for style and compliance with the guidelines defined in the PEP 8 style guide. It helps maintain clean and readable Python code.
 
-- [Black](https://black.readthedocs.io/): Uma ferramenta de formatação de código Python que segue uma abordagem de "opinião única" para garantir um estilo de código consistente. O Black automatiza a formatação do código, eliminando discussões sobre estilo e mantendo um formato uniforme.
+- [Black](https://black.readthedocs.io/): A Python code formatter that follows a "one true style" approach to ensure consistent code style. Black automates code formatting, eliminating discussions about style and maintaining a uniform format.
 
-## Configuração e Utilização
+## Configuration and Usage
 
-Siga as instruções abaixo para configurar e utilizar as ferramentas no projeto:
+Follow the instructions below to configure and use the tools in the project:
 
 ### Poetry
 
-1. Certifique-se de ter o Poetry instalado em seu ambiente. Caso contrário, siga as instruções na documentação oficial do Poetry.
+1. Make sure you have Poetry installed in your environment. If not, follow the instructions in the official Poetry documentation.
 
-2. Navegue até o diretório raiz do projeto no terminal ou prompt de comando.
+2. Navigate to the project's root directory in the terminal or command prompt.
 
-3. Crie e ative um ambiente virtual com o Poetry usando o seguinte comando:
+3. Create and activate a virtual environment with Poetry using the following command:
    `poetry shell`
 
-4. Instale as dependências do projeto, incluindo as dependências de desenvolvimento, usando o seguinte comando:
+4. Install the project dependencies, including development dependencies, using the following command:
    `poetry install`
 
-Todas as dependências, incluindo o Flake8 e o Black, serão instaladas automaticamente.
+All dependencies, including Flake8 and Black, will be installed automatically.
 
-### Verificação de Estilo e Qualidade
+### Style and Quality Checking
 
-O projeto já está configurado para utilizar o Flake8 e o Black para verificação de estilo e qualidade de código.
+The project is already configured to use Flake8 and Black for style and code quality checking.
 
-- Para verificar o código Python com o Flake8, execute o seguinte comando:
+- To check the Python code with Flake8, run the following command:
   `poetry run flake8`
 
-O Flake8 irá verificar o código em busca de problemas de estilo e conformidade com as diretrizes do PEP 8.
+Flake8 will check the code for style issues and compliance with the PEP 8 guidelines.
 
-- Para formatar automaticamente o código Python com o Black, execute o seguinte comando:
+- To automatically format the Python code with Black, run the following command:
   `poetry run black .`
 
-O Black irá formatar o código, garantindo um estilo consistente.
+Black will format the code, ensuring a consistent style.
 
-Lembre-se de adaptar os comandos acima de acordo com a estrutura do seu projeto.
+Remember to adapt the above commands according to your project's structure.
 
-Aproveite o uso do Poetry, Flake8 e Black para garantir uma melhor organização, estilo e qualidade do código neste projeto
+Take advantage of Poetry, Flake8, and Black to ensure better organization, style, and code quality in this project.
+
+### Running Django Server and Database Migrations
+
+To start Django, the project follows the clean architecture approach by placing the Django framework in the "infrastructure" folder. This folder represents the infrastructure layer, responsible for handling the implementation details related to frameworks, databases, external services, and other technical components.
+
+By placing Django in the "infrastructure" folder, it separates the technical aspects of the application from the core business logic. This separation allows for easier replacement of the framework if needed and ensures that changes in the underlying technology do not affect the core business logic.
+
+To start Django, use the following commands:
+
+- On Windows: Execute the `run_manage.bat` file.
+  Create database migrations:
+  `poetry run run_manage.bat makemigrations`
+
+  Apply migrations to the database:
+  `poetry run run_manage.bat migrate`
+
+  Create a superuser to access the admin area:
+  `poetry run run_manage.bat createsuperuser`
+
+  Start the Django development server:
+  `poetry run run_manage.bat runserver`
+
+  Make sure the `run_manage.bat` file has execution permissions.
+
+- On Linux: Execute the `run_manage.sh` file.
+  Create database migrations:
+  `poetry run run_manage.sh makemigrations`
+
+  Apply migrations to the database:
+  `poetry run run_manage.sh migrate`
+
+  Create a superuser to access the admin area:
+  `poetry run run_manage.sh createsuperuser`
+
+  Start the Django development server:
+  `poetry run run_manage.sh runserver`
+
+  Remember to give execution permissions to the `run_manage.sh` file using the command `chmod +x run_manage.sh`.
+
+Remember to adapt the above commands according to your project's structure.
+
+Take advantage of Poetry, Flake8, and Black to ensure better organization, style, and code quality in this project.
