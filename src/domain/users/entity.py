@@ -4,7 +4,7 @@ from pydantic import EmailStr
 from pydantic.dataclasses import dataclass
 
 
-@dataclass
+@dataclass(init=True)
 class UserEntity:
     """
     Entity class representing a user.
