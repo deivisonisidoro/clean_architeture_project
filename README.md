@@ -76,10 +76,10 @@ To start Django, follow the steps below based on your operating system:
   - Use the following commands to perform database migrations, create a superuser, and start the Django development server:
 
     ```bash
-    poetry run run_manage.sh makemigrations
-    poetry run run_manage.sh migrate
-    poetry run run_manage.sh createsuperuser
-    poetry run run_manage.sh runserver
+    poetry run ./run_manage.sh makemigrations
+    poetry run ./run_manage.sh migrate
+    poetry run ./run_manage.sh createsuperuser
+    poetry run ./run_manage.sh runserver
     ```
 
   - Remember to give execution permissions to the `run_manage.sh` file using the command `chmod +x run_manage.sh`.
