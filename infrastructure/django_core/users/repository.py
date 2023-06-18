@@ -8,8 +8,18 @@ from src.application.users.interfaces.repository_interface import UserRepository
 
 @dataclass
 class UseRepository(UserRepositoryInterface):
+    """
+    Implementation of UserRepositoryInterface that interacts with the database to perform user-related operations.
+    """
+
     @transaction.atomic
     def create(self, user_dto: UserDTO):
+        """
+        Create a new user in the database.
+
+        Args:
+            user_dto (UserDTO): The data transfer object containing user information.
+        """
         user = User.objects.create(
             username=user_dto.username,
             email=user_dto.email,
