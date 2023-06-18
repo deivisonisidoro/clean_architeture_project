@@ -20,6 +20,6 @@ EXPOSE 8000
 RUN chmod +x run_manage.sh
 
 # Executa os comandos desejados
-CMD ["./run_manage.sh", "makemigrations"]
-CMD ["./run_manage.sh", "migrate"]
-CMD ["./run_manage.sh", "runserver", "0.0.0.0:8000"]
+CMD ["poetry","run", "./run_manage.sh", "makemigrations"]
+CMD ["poetry","run",  "./run_manage.sh",  "migrate"]
+CMD ["poetry","run",  "./run_manage.sh",  "runserver", "0.0.0.0:5000"]
