@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "school"
+name = "clean_architecture_project"
 version = "0.1.0"
 description = ""
 authors = ["Deivison Isidoro da Silva <61429017+deivisonisidoro@users.noreply.github.com>"]
