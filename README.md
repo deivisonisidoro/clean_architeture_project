@@ -11,6 +11,8 @@ The project utilizes the following tools:
 - [Flake8](https://flake8.pycqa.org/): A Python static code analysis tool that checks for style and compliance with the guidelines defined in the PEP 8 style guide. It helps maintain clean and readable Python code.
 
 - [Black](https://black.readthedocs.io/): A Python code formatter that follows a "one true style" approach to ensure consistent code style. Black automates code formatting, eliminating discussions about style and maintaining a uniform format.
+- [MkDocs](https://www.mkdocs.org/): A static site generator that builds HTML documentation from Markdown files.
+- [Django](https://www.djangoproject.com/): A high-level Python web framework that enables rapid development and clean design. It follows the model-template-view architectural pattern.
 
 ## Configuration and Usage
 
@@ -47,6 +49,26 @@ Black will format the code, ensuring a consistent style.
 Remember to adapt the above commands according to your project's structure.
 
 Take advantage of Poetry, Flake8, and Black to ensure better organization, style, and code quality in this project.
+
+### Documentation with MkDocs
+
+The project utilizes MkDocs to generate documentation from Markdown files. MkDocs simplifies the process of creating and maintaining documentation in a clean and intuitive manner.
+
+To configure and use MkDocs, follow the steps below:
+
+1. Navigate to the project's docs directory in the terminal or command:
+   `mkdocs serve`
+
+   This will start a local development server, and you can access the documentation by visiting `http://localhost:8000` in your web browser.
+
+2. To build the static HTML files for deployment, run the following command:
+   `mkdocs build`
+
+   This will generate the HTML files in the `site` directory.
+
+3. Deploy the generated HTML files from the `site` directory to your desired hosting platform or server.
+
+Take advantage of Poetry, Flake8, Black, and MkDocs to ensure better organization, style, code quality, and documentation in this project.
 
 ### Running Django Server and Database Migrations
 
