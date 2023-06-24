@@ -3,7 +3,9 @@ from pydantic.dataclasses import dataclass
 from users.models.user import User
 
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
 
 
 @dataclass

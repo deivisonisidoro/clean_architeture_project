@@ -1,8 +1,12 @@
 from pydantic.dataclasses import dataclass
 
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
-from src.application.users.interfaces.service_interface import UserServiceInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
+from src.application.users.interfaces.service_interface import (
+    UserServiceInterface,
+)
 from src.domain.users.entity import UserEntity
 from src.domain.users.enums import ErrorMessage, SuccessMessage
 

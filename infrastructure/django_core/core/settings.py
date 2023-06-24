@@ -31,7 +31,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-a5_^wcu127zdctb=&p%uvma9y2ga%-@bazd5vh!#e$#ak5)6t-"
+SECRET_KEY = (
+    "django-insecure-a5_^wcu127zdctb=&p%uvma9y2ga%-@bazd5vh!#e$#ak5)6t-"
+)
 
 DEBUG = True
 
@@ -60,7 +62,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "core.urls"
 
-REST_FRAMEWORK = {"DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"]}
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"]
+}
 
 TEMPLATES = [
     {

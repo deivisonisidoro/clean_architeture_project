@@ -7,8 +7,12 @@ from users.models.user import User
 
 from infrastructure.django_core.users.repository import UseRepository
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
-from src.application.users.interfaces.service_interface import UserServiceInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
+from src.application.users.interfaces.service_interface import (
+    UserServiceInterface,
+)
 from src.application.users.service import UserService
 
 
@@ -48,4 +52,6 @@ class UserViewSet(viewsets.ModelViewSet):
         dto = UserDTO(**request.data)
         service = self.user_service(self.user_repository())
         response = service.create_user(dto)
-        return Response({"detail": response["message"]}, status=response["code"])
+        return Response(
+            {"detail": response["message"]}, status=response["code"]
+        )

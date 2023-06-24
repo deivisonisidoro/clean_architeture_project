@@ -29,7 +29,9 @@ class UserEntity:
     email: EmailStr
     password: str
 
-    def __init__(self, username: str, email: EmailStr, password: str, id: Any = None):
+    def __init__(
+        self, username: str, email: EmailStr, password: str, id: Any = None
+    ):
         """
         Initializes a new UserEntity object.
 

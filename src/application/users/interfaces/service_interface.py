@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
 from src.domain.users.entity import UserEntity
 
 
