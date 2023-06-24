@@ -1,6 +1,8 @@
 import pytest
 
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
 from src.application.users.service import UserService
 
 

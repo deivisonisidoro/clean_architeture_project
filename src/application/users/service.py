@@ -1,8 +1,12 @@
 from pydantic.dataclasses import dataclass
 
 from src.application.users.dto import UserDTO
-from src.application.users.interfaces.repository_interface import UserRepositoryInterface
-from src.application.users.interfaces.service_interface import UserServiceInterface
+from src.application.users.interfaces.repository_interface import (
+    UserRepositoryInterface,
+)
+from src.application.users.interfaces.service_interface import (
+    UserServiceInterface,
+)
 from src.domain.enums.error_message import ErrorMessage
 from src.domain.enums.status_code import StatusCode
 from src.domain.enums.success_message import SuccessMessage
