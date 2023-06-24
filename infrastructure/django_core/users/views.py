@@ -50,7 +50,7 @@ class UserViewSet(viewsets.ModelViewSet):
             response (Response): The HTTP response object.
         """
         dto = UserDTO(**request.data)
-        service = self.user_service(self.user_repository())
+        service = self.user_service(self.user_repository)
         response = service.create_user(dto)
         return Response(
             {"detail": response["message"]}, status=response["code"]
