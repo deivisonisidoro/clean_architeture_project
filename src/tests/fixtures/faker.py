@@ -11,6 +11,6 @@ def fake():
     can be used to generate fake data for testing purposes.
 
     Returns:
-        Faker: An instance of the Faker class.
+        fake (Faker): An instance of the Faker class.
     """
     return Faker()
