@@ -15,18 +15,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Poetry
-        uses: actions/setup-poetry@v2
-        with:
-          poetry-version: "1.x"
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
       - name: Install dependencies
-        run: poetry install --no-root
+        run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+          poetry install --no-root
 
       - name: Run tests
-        run: poetry run pytest
+        run: |
+          source .venv/bin/activate
+          poetry run pytest
