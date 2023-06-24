@@ -37,12 +37,6 @@ class TestUserDTO:
         email = fake.email()
         password = fake.password()
         user_dto = UserDTO(username, email, password)
-        user_dto = UserDTO(
-            username=username,
-            email=email,
-            password=password,
-        )
-
         user_entity = user_dto.to_domain()
 
         assert user_entity.username == username
