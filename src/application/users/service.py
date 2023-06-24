@@ -7,8 +7,9 @@ from src.application.users.interfaces.repository_interface import (
 from src.application.users.interfaces.service_interface import (
     UserServiceInterface,
 )
-from src.domain.users.entity import UserEntity
-from src.domain.users.enums import ErrorMessage, SuccessMessage
+from src.domain.users.enums.error_message import ErrorMessage
+from src.domain.users.enums.status_code import StatusCode
+from src.domain.users.enums.success_message import SuccessMessage
 
 
 @dataclass
@@ -45,11 +46,11 @@ class UserService(UserServiceInterface):
             self.storage.create(dto)
             return {
                 "message": self.success_message.CREATED_SUCCESSFULLY.value,
-                "code": 201,
+                "code": StatusCode.CREATED.value,
             }
 
         except Exception:
             return {
                 "message": self.error_message.INVALID_REQUEST.value,
-                "code": 400,
+                "code": StatusCode.BAD_REQUEST.value,
             }
